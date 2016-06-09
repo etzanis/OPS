@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+   
+   <extension
+         point="org.knime.workbench.repository.nodes">
+      <node
+            category-path="/"
+            factory-class="org.ops.MyOpsNodeFactory"
+            id="org.ops.MyOpsNodeFactory"/>
+   </extension>
+
+ <extension point="org.eclipse.ui.preferencePages">
+ 	<page category="org.knime.workbench.ui.preferences" id="BadWordsPreferencePage"
+ 		name="OpenPhacts"
+    		class="preferences.NodePreferencePage">
+   	</page>
+   </extension>
+   
+   <extension point="org.eclipse.core.runtime.preferences">
+      <initializer class="preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+
+</plugin>
