@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<knimeNode icon="default.png" type="Source" xmlns="http://knime.org/node/v2.8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://knime.org/node/v2.10 http://knime.org/node/v2.10.xsd">
+    <name>Connector</name>
+    
+    <shortDescription>
+        Source node to connect to Open Phacts API.
+		Via Knime's Preferences window (File -> Preferences) choose the Open Phacts option. Fill the required fields, app_id (your access application id), app_key (your access application key) and a link to Open PHACTS API. 
+		The current version of the Open PHACTS API is version 2.1 <a href="https://dev.openphacts.org/swagger/spec/ops_2_1.json">https://dev.openphacts.org/swagger/spec/ops_2_1.json</a>
+    </shortDescription>
+    
+    <fullDescription>
+ <intro><p>The <b>Connector</b> node provides connections to Open PHACTS API.
+        </p>
+            <p> The user interface dialog options are designed according to the online Open Phacts API documentation available at
+                <a href="https://dev.openphacts.org/docs">https://dev.openphacts.org/docs</a> (a login is required). Users are encouraged to explore our documentation for a complete list for each API call.  
+                </p>
+            <p>The <i>Connector</i> node was developed by <a href="http://www.openphacts.org">Open Phacts</a>.
+                 For feedback and more information, please contact <a href="mailto:node@openphacts.org">node@openphacts.org</a>
+                </p>
+        </intro>
+                        
+        <option name="Service"> From the drop-down list, choose an available Service from Open Phacts API.</option>
+        <option name="Parameters"> The parameter tab displays the parameters that are available for the selected service </option>
+        <!-- possibly more options that can also be grouped by tabs -->
+        <!--
+        <tab name="Standard Options">
+            <option name="short name of first option (like in the dialog)">description of first option</option>
+            <option name="short name of second option (like in the dialog)">description of second option</option>
+        </tab>
+        <tab name="Advanced Options">
+            <option name="short name of first advanced option (like in the dialog)">description of first advanced option</option>
+        </tab>
+        -->
+    </fullDescription>
+    
+    <ports>
+        <inPort index="0" name="Parameters">A table with one row. The column headers are the parameter names and the each corresponding cell on the first row (rest of the rows are ignored). </inPort>
+        <outPort index="0" name="Output">A table with one cell containing the result (JSON/XML) service call URL based on the selected service and its parameters. </outPort>        
+        <outPort index="1" name="executable URL">A table with two rows containing the selected parameters and the actual web link against Open Phacts API. </outPort>  
+        <!-- possibly more output ports here-->
+    </ports>    
+</knimeNode>

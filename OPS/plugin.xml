@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.0"?>
 <plugin>
-   
-   <extension
-         point="org.knime.workbench.repository.nodes">
-      <node
-            category-path="/"
-            factory-class="org.ops.MyOpsNodeFactory"
-            id="org.ops.MyOpsNodeFactory"/>
-   </extension>
 
- <extension point="org.eclipse.ui.preferencePages">
- 	<page category="org.knime.workbench.ui.preferences" id="BadWordsPreferencePage"
- 		name="OpenPhacts"
+      <extension point="org.knime.workbench.repository.categories">
+      <category description="OpenPhacts Description" 
+      icon="./web/default.png" level-id="openphacts" name="Open Phacts" path="/">
+      </category>
+      </extension>
+   
+   <extension  point="org.knime.workbench.repository.nodes">    
+    
+    <node   category-path="/openphacts"  factory-class="org.ops.ConnectorNodeFactory" id="org.ops.MyOpsNodeFactory"/>    
+    
+   </extension>
+   
+   <extension point="org.eclipse.ui.preferencePages">
+ 	<page category="org.knime.workbench.ui.preferences" id="OpenPhacts"
+ 		name="Open Phacts"
     		class="preferences.NodePreferencePage">
    	</page>
    </extension>
@@ -21,5 +25,5 @@
       <initializer class="preferences.PreferenceInitializer">
       </initializer>
    </extension>
-
+   
 </plugin>

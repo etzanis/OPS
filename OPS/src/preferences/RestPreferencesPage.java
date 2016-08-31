@@ -1,6 +1,7 @@
 package preferences;
 
 import org.eclipse.jface.preference.IPreferenceStore;
+
 import org.eclipse.jface.preference.PreferencePage;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
@@ -9,7 +10,7 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.List;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
-import org.ops.MyOpsNodePlugin;
+import org.ops.ConnectorNodePlugin;
 
 public abstract class RestPreferencesPage
   extends PreferencePage
@@ -21,7 +22,7 @@ public abstract class RestPreferencesPage
   public RestPreferencesPage(int numberCols)
   {
     this.numberColumns = numberCols;
-    setPreferenceStore(MyOpsNodePlugin.getDefault().getPreferenceStore());
+    setPreferenceStore(ConnectorNodePlugin.getDefault().getPreferenceStore());
   }
   
   public void init(IWorkbench workbench) {}
@@ -42,7 +43,7 @@ public abstract class RestPreferencesPage
   
   public IPreferenceStore getPreferenceStore()
   {
-    return MyOpsNodePlugin.getDefault().getPreferenceStore();
+    return ConnectorNodePlugin.getDefault().getPreferenceStore();
   }
   
   protected void addSpacer()
